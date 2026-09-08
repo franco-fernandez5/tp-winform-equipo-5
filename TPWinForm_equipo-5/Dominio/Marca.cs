@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TPWinForm_equipo_5.Dominio
 {
-     class Categoria
-     {
+    internal class Marca
+    {
         public int Id { get; set; }
         public string Descripcion { get; set; }
-     }
+    }
 }
