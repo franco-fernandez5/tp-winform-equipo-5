@@ -22,19 +22,21 @@ namespace TPWinForm_equipo_5.Formularios
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnNuevaCategoria_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnModificarCategoria_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnEliminarCategoria_Click(object sender, EventArgs e)
         {
 
         }
+
+       
     }
 }
