@@ -13,7 +13,7 @@ namespace TPWinForm_equipo_5.Formularios
 {
     public partial class frmAgregarModificarCategoria : Form
     {
-        private Categoria categoria = null;
+        private Categoria categoria = null; 
         public frmAgregarModificarCategoria()
         {
 
@@ -35,10 +35,19 @@ namespace TPWinForm_equipo_5.Formularios
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-           
-             Categoria categoria = new Categoria();
-           
-             Close();
+            try
+            {
+                if (categoria == null)
+                    categoria = new Categoria();
+                categoria.Descripcion = txtDescripcionCategoria.Text;
+                MessageBox.Show("Categoria agregada" );
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString()); 
+            }
+
 
         }
     }
