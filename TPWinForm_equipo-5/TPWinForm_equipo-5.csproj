@@ -62,6 +62,12 @@
     <Compile Include="Formularios\frmAgregarModificarCategoria.Designer.cs">
       <DependentUpon>frmAgregarModificarCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmArticulos.Designer.cs">
+      <DependentUpon>FrmArticulos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\frmAgregarModificarCategoria.resx">
       <DependentUpon>frmAgregarModificarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmArticulos.resx">
+      <DependentUpon>FrmArticulos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCategorias.resx">
       <DependentUpon>FrmCategorias.cs</DependentUpon>
