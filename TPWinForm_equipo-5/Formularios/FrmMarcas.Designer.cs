@@ -28,9 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnNuevaMarca = new System.Windows.Forms.Button();
             this.btnModificarMarca = new System.Windows.Forms.Button();
             this.btnEliminarMarca = new System.Windows.Forms.Button();
+            this.dgvMarcas = new System.Windows.Forms.DataGridView();
+            this.frmMarcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmMarcasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNuevaMarca
@@ -63,18 +68,36 @@
             this.btnEliminarMarca.UseVisualStyleBackColor = true;
             this.btnEliminarMarca.Click += new System.EventHandler(this.btnEliminarMarca_Click);
             // 
+            // dgvMarcas
+            // 
+            this.dgvMarcas.AllowUserToAddRows = false;
+            this.dgvMarcas.AllowUserToDeleteRows = false;
+            this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMarcas.Location = new System.Drawing.Point(23, 22);
+            this.dgvMarcas.Name = "dgvMarcas";
+            this.dgvMarcas.ReadOnly = true;
+            this.dgvMarcas.Size = new System.Drawing.Size(765, 273);
+            this.dgvMarcas.TabIndex = 3;
+            // 
+            // frmMarcasBindingSource
+            // 
+            this.frmMarcasBindingSource.DataSource = typeof(TPWinForm_equipo_5.Formularios.FrmMarcas);
+            // 
             // FrmMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnEliminarMarca);
+            this.Controls.Add(this.dgvMarcas);
             this.Controls.Add(this.btnModificarMarca);
             this.Controls.Add(this.btnNuevaMarca);
+            this.Controls.Add(this.btnEliminarMarca);
             this.Name = "FrmMarcas";
             this.Text = "FrmMarcas";
             this.Load += new System.EventHandler(this.FrmMarcas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.frmMarcasBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -84,5 +107,7 @@
         private System.Windows.Forms.Button btnNuevaMarca;
         private System.Windows.Forms.Button btnModificarMarca;
         private System.Windows.Forms.Button btnEliminarMarca;
+        private System.Windows.Forms.DataGridView dgvMarcas;
+        private System.Windows.Forms.BindingSource frmMarcasBindingSource;
     }
 }
