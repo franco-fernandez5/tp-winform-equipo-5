@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TPWinForm_equipo_5.Dominio;
 
 namespace TPWinForm_equipo_5.Formularios
 {
@@ -24,7 +25,10 @@ namespace TPWinForm_equipo_5.Formularios
 
         private void btnModificarArticulo_Click(object sender, EventArgs e)
         {
-            
+            //Articulo seleccionado;
+            //seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem; //sin la BD conectada el modificar va a lanzar error
+            //FrmAgregarArticulo modificar = new FrmAgregarArticulo(seleccionado);
+            //modificar.ShowDialog();
         }
 
         private void btnEliminarArticulo_Click(object sender, EventArgs e)

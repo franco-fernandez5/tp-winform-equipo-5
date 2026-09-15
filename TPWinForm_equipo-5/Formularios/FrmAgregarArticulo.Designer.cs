@@ -268,6 +268,7 @@
             this.MinimumSize = new System.Drawing.Size(460, 500);
             this.Name = "FrmAgregarArticulo";
             this.Text = "FrmAgregarArticulo";
+            this.Load += new System.EventHandler(this.FrmAgregarArticulo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
