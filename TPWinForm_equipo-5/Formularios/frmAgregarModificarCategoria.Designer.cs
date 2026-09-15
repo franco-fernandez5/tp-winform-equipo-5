@@ -90,6 +90,7 @@
             this.Controls.Add(this.lblDescripcionCategoria);
             this.Name = "frmAgregarModificarCategoria";
             this.Text = "frmAgregarModificarCategoria";
+            this.Load += new System.EventHandler(this.frmAgregarModificarCategoria_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -28,6 +28,14 @@ namespace TPWinForm_equipo_5.Formularios
             Text = "Modificar Categoria";
         }
 
+        private void frmAgregarModificarCategoria_Load(object sender, EventArgs e)
+        {
+            if (categoria != null)
+            {
+                txtDescripcionCategoria.Text = categoria.Descripcion;
+            }
+        }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
@@ -50,5 +58,7 @@ namespace TPWinForm_equipo_5.Formularios
 
 
         }
+
+        
     }
 }

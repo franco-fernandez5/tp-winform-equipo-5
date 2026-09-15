@@ -31,13 +31,39 @@ namespace TPWinForm_equipo_5.Formularios
 
         private void btnModificarCategoria_Click(object sender, EventArgs e)
         {
-            Categoria seleccionada = (Categoria)dvgCategorias.CurrentRow.DataBoundItem;
+            if(dgvCategorias.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione una categoria para modificar");
+                return;
+            }
+
+            Categoria seleccionada = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
             frmAgregarModificarCategoria form = new frmAgregarModificarCategoria(seleccionada);   
             form.ShowDialog();
         }
 
         private void btnEliminarCategoria_Click(object sender, EventArgs e)
         {
+            if (dgvCategorias.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione una categoria para eliminar");
+                return;
+            }
+            
+            Categoria seleccionada = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
+
+            DialogResult respuesta = MessageBox.Show(
+                "¿Seguro que desea eliminar la categoría '" + seleccionada.Descripcion + "'?",
+                     "Confirmar eliminacion",
+                    MessageBoxButtons.YesNo,
+                     MessageBoxIcon.Question
+            );
+
+            if (respuesta == DialogResult.Yes)
+            {
+     
+               
+            }
 
         }
 
