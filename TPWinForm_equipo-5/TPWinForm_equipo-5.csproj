@@ -108,6 +108,7 @@
       <DependentUpon>FrmMarcas.cs</DependentUpon>
     </Compile>
     <Compile Include="Negocio\AccesoDatos.cs" />
+    <Compile Include="Negocio\ArticuloNegocio.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\FrmAgregarArticulo.resx">
