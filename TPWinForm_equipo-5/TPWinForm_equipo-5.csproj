@@ -109,6 +109,7 @@
     </Compile>
     <Compile Include="Negocio\AccesoDatos.cs" />
     <Compile Include="Negocio\ArticuloNegocio.cs" />
+    <Compile Include="Negocio\CategoriaNegocio.cs" />
     <Compile Include="Negocio\MarcaNegocio.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
