@@ -8,14 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPWinForm_equipo_5.Dominio;
+using TPWinForm_equipo_5.Negocio;
 
 namespace TPWinForm_equipo_5.Formularios
 {
     public partial class FrmMarcas : Form
     {
+        private List<Marca> listaMarcas;
         public FrmMarcas()
         {
             InitializeComponent();
+            MarcaNegocio negocio = new MarcaNegocio();
+            listaMarcas = negocio.listar();
+            dgvMarcas.DataSource = listaMarcas;
         }
 
         private void FrmMarcas_Load(object sender, EventArgs e)
