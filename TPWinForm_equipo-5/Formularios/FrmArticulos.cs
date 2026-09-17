@@ -44,7 +44,11 @@ namespace TPWinForm_equipo_5.Formularios
 
         private void btnDetalleArticulo_Click(object sender, EventArgs e)
         {
+            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
 
+            FrmDetalleArticulo detalle = new FrmDetalleArticulo(seleccionado);
+
+            detalle.ShowDialog();
         }
 
         private void agregarNuevoArticuloToolStripMenuItem_Click(object sender, EventArgs e)
