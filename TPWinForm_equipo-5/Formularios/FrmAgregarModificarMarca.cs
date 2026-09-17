@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPWinForm_equipo_5.Dominio;
+using TPWinForm_equipo_5.Negocio;
 
 namespace TPWinForm_equipo_5.Formularios
 {
@@ -22,17 +23,30 @@ namespace TPWinForm_equipo_5.Formularios
         {
             InitializeComponent();
             this.marca = marca;
-            Text = "Modificar Marca";
+            txtDescripcionMarca.Text = marca.Descripcion;
         }
 
         private void btnAgregarMarca_Click(object sender, EventArgs e)
         {
             try
             {
+                MarcaNegocio marcaNegocio = new MarcaNegocio();
+
                 if (marca == null)
-                    marca = new Marca();
-                marca.Descripcion = txtDescripcionMarca.Text;
-                MessageBox.Show("Marca agregada");
+                {
+                    Marca marca = new Marca();
+                    marca.Descripcion = txtDescripcionMarca.Text;
+                    marcaNegocio.agregarMarca(marca);
+                    MessageBox.Show("Marca agregada");
+                }
+                else
+                {
+                    marca.Descripcion = txtDescripcionMarca.Text;
+                    marcaNegocio.modificarMarca(marca);
+                    MessageBox.Show("Marca modificada");
+                }
+                
+                Close();
 
             }
             catch (Exception ex)

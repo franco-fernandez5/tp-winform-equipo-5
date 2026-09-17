@@ -14,26 +14,25 @@ namespace TPWinForm_equipo_5.Formularios
 {
     public partial class FrmMarcas : Form
     {
-        private List<Marca> listaMarcas;
         public FrmMarcas()
         {
             InitializeComponent();
-            MarcaNegocio negocio = new MarcaNegocio();
-            listaMarcas = negocio.listar();
-            dgvMarcas.DataSource = listaMarcas;
         }
-
         private void FrmMarcas_Load(object sender, EventArgs e)
         {
-
+            cargarMarcas();
         }
-
+        private void cargarMarcas()
+        {
+            MarcaNegocio negocio = new MarcaNegocio();
+            dgvMarcas.DataSource = negocio.listar();
+        }
         private void btnNuevaMarca_Click(object sender, EventArgs e)
         {
             FrmAgregarModificarMarca formulario = new FrmAgregarModificarMarca();
             formulario.ShowDialog();
+            cargarMarcas();
         }
-
         private void btnModificarMarca_Click(object sender, EventArgs e)
         {
             if(dgvMarcas.CurrentRow  == null)
@@ -41,12 +40,13 @@ namespace TPWinForm_equipo_5.Formularios
                 MessageBox.Show("Seleccione una marca para modificarla.");
                 return;
             }
-
-            Marca marcaSeleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
-
-            FrmAgregarModificarMarca formulario = new FrmAgregarModificarMarca(marcaSeleccionada);
-
-            formulario.ShowDialog();
+            else
+            {
+                Marca marcaSeleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+                FrmAgregarModificarMarca formulario = new FrmAgregarModificarMarca(marcaSeleccionada);
+                formulario.ShowDialog();
+                cargarMarcas();
+            }
         }
 
         private void btnEliminarMarca_Click(object sender, EventArgs e)

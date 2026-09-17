@@ -92,6 +92,7 @@ namespace TPWinForm_equipo_5.Formularios
             catch (Exception ex)
             {
                 pbxArticulo.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+                throw ex;
             }
         }
 

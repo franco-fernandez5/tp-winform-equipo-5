@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using TPWinForm_equipo_5.Dominio;
 
 namespace TPWinForm_equipo_5.Negocio
 {
-    internal class MarcaNegocio
+    public class MarcaNegocio
     {
         public List<Marca> listar()
         {
@@ -30,6 +31,7 @@ namespace TPWinForm_equipo_5.Negocio
                     lista.Add(aux);
                 }
 
+                datos.Lector.Close();
                 return lista;
             }
             catch (Exception ex)
@@ -39,6 +41,36 @@ namespace TPWinForm_equipo_5.Negocio
             finally
             {
                 datos.cerrarConexion();
+            }
+        }
+        public void agregarMarca(Marca marcaNueva)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("INSERT INTO MARCAS (Descripcion) Values ('" + marcaNueva.Descripcion +"')");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void modificarMarca(Marca marcaExistente)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("UPDATE MARCAS SET Descripcion = '" + marcaExistente.Descripcion + "' WHERE Id = " + marcaExistente.Id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
     }
