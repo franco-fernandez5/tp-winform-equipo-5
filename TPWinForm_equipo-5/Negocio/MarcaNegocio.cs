@@ -73,5 +73,23 @@ namespace TPWinForm_equipo_5.Negocio
                 MessageBox.Show(ex.Message);
             }
         }
+        public void eliminarMarca(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("DELETE FROM MARCAS WHERE Id = " + id);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }

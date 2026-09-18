@@ -59,11 +59,23 @@ namespace TPWinForm_equipo_5.Formularios
 
             Marca marcaSeleccionada = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
 
-            DialogResult respuesta = MessageBox.Show("Estas seguro de eleminar esta marca?", "Eliminar Marca");
+            DialogResult respuesta = MessageBox.Show("Estas seguro de eleminar esta marca?", "Eliminar Marca", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if(respuesta == DialogResult.Yes)
             {
-                //Para cuando empezemos con la base de datos aplicamos baja fisica.
+                try
+                {
+                    MarcaNegocio negocio = new MarcaNegocio();
+                    negocio.eliminarMarca(marcaSeleccionada.Id);
+
+                    MessageBox.Show("Marca eliminada correctamente.");
+
+                    cargarMarcas();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

@@ -22,8 +22,6 @@ namespace TPWinForm_equipo_5
             //Application.Run(new Formularios.FrmArticulos());
             //Application.Run(new Formularios.FrmMarcas());
             //Application.Run(new FrmCategorias());
-
-
         }
     }
 }
