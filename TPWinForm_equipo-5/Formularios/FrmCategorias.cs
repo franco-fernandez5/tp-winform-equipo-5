@@ -87,8 +87,17 @@ namespace TPWinForm_equipo_5.Formularios
 
             if (respuesta == DialogResult.Yes)
             {
-                MessageBox.Show("Eliminado ");
-                cargar();
+                try
+                {
+                    CategoriaNegocio negocio = new CategoriaNegocio();
+                    negocio.eliminar(seleccionada.Id);
+                    MessageBox.Show("Categoria eliminada");
+                    cargar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
 
             }
 

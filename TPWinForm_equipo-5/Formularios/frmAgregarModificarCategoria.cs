@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TPWinForm_equipo_5.Dominio;
+using TPWinForm_equipo_5.Negocio;
 
 namespace TPWinForm_equipo_5.Formularios
 {
@@ -43,22 +44,33 @@ namespace TPWinForm_equipo_5.Formularios
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            CategoriaNegocio negocio = new CategoriaNegocio();
             try
             {
                 if (categoria == null)
+                {
                     categoria = new Categoria();
-                categoria.Descripcion = txtDescripcionCategoria.Text;
-                MessageBox.Show("Categoria agregada" );
-
+                    categoria.Descripcion = txtDescripcionCategoria.Text;
+                    negocio.agregar(categoria);
+                    MessageBox.Show("Categoria agregada ");
+                }
+                else
+                {
+                    categoria.Descripcion = txtDescripcionCategoria.Text;
+                    negocio.modificar(categoria);
+                    MessageBox.Show("Categoria modificada ");
+                }
+                Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString()); 
+                MessageBox.Show(ex.ToString());
             }
-
-
         }
 
-        
+
     }
+
+        
+    
 }
