@@ -24,6 +24,10 @@ namespace TPWinForm_equipo_5.Formularios
         private void FrmArticulos_Load(object sender, EventArgs e)
         {
             cargar();
+
+            cbxBuscarPor.Items.Add("Código");
+            cbxBuscarPor.Items.Add("Nombre");
+            cbxBuscarPor.SelectedIndex = 0;
         }
 
         private void btnModificarArticulo_Click(object sender, EventArgs e)
@@ -129,5 +133,33 @@ namespace TPWinForm_equipo_5.Formularios
             }
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
+            try
+            {
+                string seleccionado = "";
+
+                if (cbxBuscarPor.SelectedItem.ToString() == "Código")
+                {
+                    seleccionado = "Codigo";
+
+                }
+                else
+                {
+                    seleccionado = "Nombre";
+                }
+
+                listaArticulos = negocio.filtrar(seleccionado, txtBuscar.Text);
+
+                dgvArticulos.DataSource = listaArticulos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+
+            }
+        }
     }
 }
