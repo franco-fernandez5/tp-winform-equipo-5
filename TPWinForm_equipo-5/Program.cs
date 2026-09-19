@@ -19,9 +19,10 @@ namespace TPWinForm_equipo_5
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Application.Run(new Formularios.frmAgregarModificarCategoria());
-            Application.Run(new Formularios.FrmArticulos());
+            //Application.Run(new Formularios.FrmArticulos());
             //Application.Run(new Formularios.FrmMarcas());
             //Application.Run(new FrmCategorias());
+            Application.Run(new frmPrincipal());
         }
     }
 }

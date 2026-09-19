@@ -65,11 +65,11 @@
     <Compile Include="Dominio\Categoria.cs" />
     <Compile Include="Dominio\Imagen.cs" />
     <Compile Include="Dominio\Marca.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmAgregarArticulo.cs">
       <SubType>Form</SubType>
@@ -139,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmMarcas.resx">
       <DependentUpon>FrmMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
