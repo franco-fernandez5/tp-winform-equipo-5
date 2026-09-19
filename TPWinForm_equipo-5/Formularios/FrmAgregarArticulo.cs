@@ -30,7 +30,35 @@ namespace TPWinForm_equipo_5.Formularios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            ArticuloNegocio negocio = new ArticuloNegocio();
 
+            try
+            {
+                if(articulo == null)
+                    articulo = new Articulo();
+
+                articulo.Codigo = txtCodigo.Text;
+                articulo.Nombre = txtNombre.Text;
+                articulo.Descripcion = txtDescripcion.Text;
+                articulo.Precio = decimal.Parse(txtPrecio.Text);
+
+                articulo.Marca = (Marca)cbxMarca.SelectedItem;
+                articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
+
+                if(articulo.Id != 0)
+                    negocio.modificar(articulo);
+                else
+                    negocio.agregar(articulo);
+
+                MessageBox.Show("Articulo guardado exitosamente.");
+
+                Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

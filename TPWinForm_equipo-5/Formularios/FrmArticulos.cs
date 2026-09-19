@@ -32,14 +32,32 @@ namespace TPWinForm_equipo_5.Formularios
             seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem; //sin la BD conectada el modificar va a lanzar error
             FrmAgregarArticulo modificar = new FrmAgregarArticulo(seleccionado);
             modificar.ShowDialog();
+
+            cargar();
         }
 
         private void btnEliminarArticulo_Click(object sender, EventArgs e)
         {
-            // Realizar eliminación física del artículo seleccionado
+            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
 
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            MessageBox.Show("¿Está seguro de que desea eliminar el artículo seleccionado?", "Confirmar eliminación", buttons);
+            DialogResult respuesta = MessageBox.Show("¿Está seguro de que desea eliminar el artículo seleccionado?", "Confirmar eliminación", buttons);
+
+            if(respuesta == DialogResult.Yes)
+            {
+                ArticuloNegocio negocio = new ArticuloNegocio();
+                try
+                {
+                    negocio.eliminar(seleccionado.Id);
+                    cargar();
+
+                    MessageBox.Show("Artículo eliminado correctamente.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
         }
 
         private void btnDetalleArticulo_Click(object sender, EventArgs e)
@@ -55,6 +73,8 @@ namespace TPWinForm_equipo_5.Formularios
         {
             FrmAgregarArticulo ventana = new FrmAgregarArticulo();
             ventana.ShowDialog();
+
+            cargar();
         }
 
         private void cargar()
@@ -92,7 +112,7 @@ namespace TPWinForm_equipo_5.Formularios
             catch (Exception ex)
             {
                 pbxArticulo.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
-                throw ex;
+                
             }
         }
 
