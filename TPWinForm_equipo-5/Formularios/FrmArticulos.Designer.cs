@@ -52,7 +52,7 @@
             this.dgvArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvArticulos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Location = new System.Drawing.Point(12, 92);
+            this.dgvArticulos.Location = new System.Drawing.Point(51, 92);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
@@ -64,7 +64,7 @@
             // btnModificarArticulo
             // 
             this.btnModificarArticulo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnModificarArticulo.Location = new System.Drawing.Point(165, 371);
+            this.btnModificarArticulo.Location = new System.Drawing.Point(215, 401);
             this.btnModificarArticulo.Name = "btnModificarArticulo";
             this.btnModificarArticulo.Size = new System.Drawing.Size(105, 41);
             this.btnModificarArticulo.TabIndex = 2;
@@ -75,7 +75,7 @@
             // btnEliminarArticulo
             // 
             this.btnEliminarArticulo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnEliminarArticulo.Location = new System.Drawing.Point(350, 371);
+            this.btnEliminarArticulo.Location = new System.Drawing.Point(400, 401);
             this.btnEliminarArticulo.Name = "btnEliminarArticulo";
             this.btnEliminarArticulo.Size = new System.Drawing.Size(105, 41);
             this.btnEliminarArticulo.TabIndex = 3;
@@ -86,7 +86,7 @@
             // btnDetalleArticulo
             // 
             this.btnDetalleArticulo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnDetalleArticulo.Location = new System.Drawing.Point(538, 371);
+            this.btnDetalleArticulo.Location = new System.Drawing.Point(588, 401);
             this.btnDetalleArticulo.Name = "btnDetalleArticulo";
             this.btnDetalleArticulo.Size = new System.Drawing.Size(105, 41);
             this.btnDetalleArticulo.TabIndex = 4;
@@ -97,7 +97,7 @@
             // pbxArticulo
             // 
             this.pbxArticulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbxArticulo.Location = new System.Drawing.Point(509, 92);
+            this.pbxArticulo.Location = new System.Drawing.Point(568, 92);
             this.pbxArticulo.Name = "pbxArticulo";
             this.pbxArticulo.Size = new System.Drawing.Size(263, 241);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -110,7 +110,7 @@
             this.articuloToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(884, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -168,7 +168,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 451);
+            this.ClientSize = new System.Drawing.Size(884, 481);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.cbxBuscarPor);
             this.Controls.Add(this.txtBuscar);
@@ -179,8 +179,10 @@
             this.Controls.Add(this.btnModificarArticulo);
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(800, 490);
+            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(900, 520);
             this.Name = "FrmArticulos";
             this.Text = "FrmArticulos";
             this.Load += new System.EventHandler(this.FrmArticulos_Load);

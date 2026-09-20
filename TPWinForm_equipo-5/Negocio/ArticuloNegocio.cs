@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using TPWinForm_equipo_5.Dominio;
 
 namespace TPWinForm_equipo_5.Negocio
@@ -95,7 +96,7 @@ namespace TPWinForm_equipo_5.Negocio
 
             try
             {
-                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) " 
+                datos.setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) "
                     + "VALUES (@Codigo, @Nombre, @Descripcion, @IdMarca, @IdCategoria, @Precio)");
 
                 datos.setearParametro("@Codigo", articulo.Codigo);
@@ -106,6 +107,37 @@ namespace TPWinForm_equipo_5.Negocio
                 datos.setearParametro("@Precio", articulo.Precio);
 
                 datos.ejecutarAccion();
+                datos.cerrarConexion();
+
+                datos = new AccesoDatos();
+
+                datos.setearConsulta("SELECT Id FROM ARTICULOS WHERE Codigo = @Codigo");
+                datos.setearParametro("@Codigo", articulo.Codigo);
+
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    articulo.Id = (int)datos.Lector["Id"];
+                }
+
+                datos.cerrarConexion();
+
+                if (articulo.Imagenes != null)
+                {
+                    foreach (Imagen imagen in articulo.Imagenes)
+                    {
+                        datos = new AccesoDatos();
+
+                        datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @ImagenUrl)");
+
+                        datos.setearParametro("@IdArticulo", articulo.Id);
+                        datos.setearParametro("@ImagenUrl", imagen.ImagenUrl);
+
+                        datos.ejecutarAccion();
+                        datos.cerrarConexion();
+                    }
+                }
             }
             catch (Exception)
             {
@@ -132,6 +164,31 @@ namespace TPWinForm_equipo_5.Negocio
                 datos.setearParametro("@Precio", articulo.Precio);
                 datos.setearParametro("@Id", articulo.Id);
                 datos.ejecutarAccion();
+                datos.cerrarConexion();
+
+                datos = new AccesoDatos();
+
+                datos.setearConsulta("DELETE FROM IMAGENES WHERE IdArticulo = @IdArticulo");
+                datos.setearParametro("@IdArticulo", articulo.Id);
+
+                datos.ejecutarAccion();
+                datos.cerrarConexion();
+
+                if (articulo.Imagenes != null)
+                {
+                    foreach (Imagen imagen in articulo.Imagenes)
+                    {
+                        datos = new AccesoDatos();
+
+                        datos.setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @ImagenUrl)");
+
+                        datos.setearParametro("@IdArticulo", articulo.Id);
+                        datos.setearParametro("@ImagenUrl", imagen.ImagenUrl);
+
+                        datos.ejecutarAccion();
+                        datos.cerrarConexion();
+                    }
+                }
             }
             catch (Exception)
             {

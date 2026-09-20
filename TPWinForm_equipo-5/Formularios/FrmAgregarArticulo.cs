@@ -45,7 +45,16 @@ namespace TPWinForm_equipo_5.Formularios
                 articulo.Marca = (Marca)cbxMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
 
-                if(articulo.Id != 0)
+                articulo.Imagenes = new List<Imagen>();
+
+                foreach (var item in lbxImagenes.Items)
+                {
+                    Imagen imagen = new Imagen();
+                    imagen.ImagenUrl = item.ToString();
+                    articulo.Imagenes.Add(imagen);
+                }
+
+                if (articulo.Id != 0)
                     negocio.modificar(articulo);
                 else
                     negocio.agregar(articulo);
@@ -137,6 +146,14 @@ namespace TPWinForm_equipo_5.Formularios
                 {
                     MessageBox.Show(ex.ToString());
                 }
+            }
+        }
+
+        private void btnEliminarImagen_Click(object sender, EventArgs e)
+        {
+            if(lbxImagenes.SelectedItem != null)
+            {
+                lbxImagenes.Items.Remove(lbxImagenes.SelectedItem);
             }
         }
     }
