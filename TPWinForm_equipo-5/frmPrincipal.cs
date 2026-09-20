@@ -35,5 +35,10 @@ namespace TPWinForm_equipo_5
             FrmArticulos form = new FrmArticulos();
             form.ShowDialog();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
