@@ -47,6 +47,12 @@ namespace TPWinForm_equipo_5.Formularios
             CategoriaNegocio negocio = new CategoriaNegocio();
             try
             {
+                if (string.IsNullOrEmpty(txtDescripcionCategoria.Text))
+                {
+                    MessageBox.Show("La descripción no puede estar vacía");
+                    return;
+                }
+
                 if (categoria == null)
                 {
                     categoria = new Categoria();
