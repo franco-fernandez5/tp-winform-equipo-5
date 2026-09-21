@@ -94,7 +94,7 @@
             this.Controls.Add(this.btnNuevaMarca);
             this.Controls.Add(this.btnEliminarMarca);
             this.Name = "FrmMarcas";
-            this.Text = "FrmMarcas";
+            this.Text = "Marcas";
             this.Load += new System.EventHandler(this.FrmMarcas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.frmMarcasBindingSource)).EndInit();

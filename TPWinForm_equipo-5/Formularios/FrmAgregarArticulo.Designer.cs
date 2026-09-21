@@ -298,7 +298,7 @@
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(460, 500);
             this.Name = "FrmAgregarArticulo";
-            this.Text = "FrmAgregarArticulo";
+            this.Text = "Agregar Articulo";
             this.Load += new System.EventHandler(this.FrmAgregarArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.ResumeLayout(false);

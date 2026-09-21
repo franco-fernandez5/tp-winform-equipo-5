@@ -64,21 +64,21 @@
             // MenuMarcas
             // 
             this.MenuMarcas.Name = "MenuMarcas";
-            this.MenuMarcas.Size = new System.Drawing.Size(130, 22);
+            this.MenuMarcas.Size = new System.Drawing.Size(200, 36);
             this.MenuMarcas.Text = "Marca";
             this.MenuMarcas.Click += new System.EventHandler(this.MenuMarcas_Click);
             // 
             // menuCategorias
             // 
             this.menuCategorias.Name = "menuCategorias";
-            this.menuCategorias.Size = new System.Drawing.Size(130, 22);
+            this.menuCategorias.Size = new System.Drawing.Size(200, 36);
             this.menuCategorias.Text = "Categorias";
             this.menuCategorias.Click += new System.EventHandler(this.menuCategorias_Click);
             // 
             // menuArticulos
             // 
             this.menuArticulos.Name = "menuArticulos";
-            this.menuArticulos.Size = new System.Drawing.Size(130, 22);
+            this.menuArticulos.Size = new System.Drawing.Size(200, 36);
             this.menuArticulos.Text = "Articulos";
             this.menuArticulos.Click += new System.EventHandler(this.menuArticulos_Click);
             // 
@@ -127,7 +127,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
-            this.Text = "Form1";
+            this.Text = "Sistema de Catalogos";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

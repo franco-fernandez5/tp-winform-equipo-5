@@ -32,6 +32,12 @@ namespace TPWinForm_equipo_5.Formularios
             {
                 MarcaNegocio marcaNegocio = new MarcaNegocio();
 
+                if (string.IsNullOrEmpty(txtDescripcionMarca.Text))
+                {
+                    MessageBox.Show("La descripción no puede estar vacía");
+                    return;
+                }
+
                 if (marca == null)
                 {
                     Marca marca = new Marca();

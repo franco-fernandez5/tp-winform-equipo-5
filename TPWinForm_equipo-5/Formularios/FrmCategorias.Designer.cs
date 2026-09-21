@@ -89,7 +89,7 @@
             this.Controls.Add(this.btnModificarCategoria);
             this.Controls.Add(this.btnNuevaCategoria);
             this.Name = "FrmCategorias";
-            this.Text = "FrmCategorias";
+            this.Text = "Categorias";
             this.Load += new System.EventHandler(this.FrmCategorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
             this.ResumeLayout(false);

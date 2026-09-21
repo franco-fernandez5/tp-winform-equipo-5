@@ -81,7 +81,7 @@
             this.Controls.Add(this.txtDescripcionMarca);
             this.Controls.Add(this.lblDescripcionMarca);
             this.Name = "FrmAgregarModificarMarca";
-            this.Text = "FrmAgregarModificarMarca";
+            this.Text = "Agregar/Modificar Marca";
             this.ResumeLayout(false);
             this.PerformLayout();
 

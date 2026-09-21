@@ -312,7 +312,7 @@
             this.Controls.Add(this.lblTitulo);
             this.MaximizeBox = false;
             this.Name = "FrmDetalleArticulo";
-            this.Text = "FrmDetalleArticulo";
+            this.Text = "Detalle Articulo";
             this.Load += new System.EventHandler(this.FrmDetalleArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.ResumeLayout(false);

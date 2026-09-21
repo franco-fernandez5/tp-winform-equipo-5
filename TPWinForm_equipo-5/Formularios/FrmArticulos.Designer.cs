@@ -184,7 +184,7 @@
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(900, 520);
             this.Name = "FrmArticulos";
-            this.Text = "FrmArticulos";
+            this.Text = "Articulos";
             this.Load += new System.EventHandler(this.FrmArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).EndInit();

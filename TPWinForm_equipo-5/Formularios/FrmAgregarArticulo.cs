@@ -36,13 +36,46 @@ namespace TPWinForm_equipo_5.Formularios
             {
                 if(articulo == null)
                     articulo = new Articulo();
-
+                if (string.IsNullOrEmpty(txtCodigo.Text))
+                {
+                    MessageBox.Show("El código no puede estar vacío");
+                    return;
+                }
                 articulo.Codigo = txtCodigo.Text;
+
+                if (string.IsNullOrEmpty(txtNombre.Text))
+                {
+                    MessageBox.Show("El nombre no puede estar vacío");
+                    return;
+                }
                 articulo.Nombre = txtNombre.Text;
+
+                if (string.IsNullOrEmpty(txtDescripcion.Text))
+                {
+                    MessageBox.Show("La descripción no puede estar vacía");
+                    return;
+                }
                 articulo.Descripcion = txtDescripcion.Text;
+
+                if (string.IsNullOrEmpty(txtPrecio.Text))
+                {
+                    MessageBox.Show("El precio no puede estar vacío");
+                    return;
+                }
                 articulo.Precio = decimal.Parse(txtPrecio.Text);
 
+                if (cbxMarca.SelectedItem == null)
+                {
+                    MessageBox.Show("Seleccione una Marca");
+                    return;
+                }
                 articulo.Marca = (Marca)cbxMarca.SelectedItem;
+
+                if (cbxCategoria.SelectedItem == null)
+                {
+                    MessageBox.Show("Seleccione una Categoría");
+                    return;
+                }
                 articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
 
                 articulo.Imagenes = new List<Imagen>();
